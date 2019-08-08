@@ -2,7 +2,7 @@
 
 ## 1. Установка Ruby на Debian 10
 ### Установка Node js 12.x
-https://github.com/nodesource/distributions/blob/master/README.md#debinstall
+[Node js на GitHub](https://github.com/nodesource/distributions/blob/master/README.md#debinstall)
 ### Using Debian, as root
 curl -sL https://deb.nodesource.com/setup_12.x | bash -
 apt install -y nodejs
