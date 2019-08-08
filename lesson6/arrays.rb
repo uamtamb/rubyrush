@@ -6,6 +6,7 @@ basket.push("Cherry", "Mango")
 puts "Корзина: "+basket.to_s
 puts basket[0]
 puts basket[2]
+#удалить из корзины
 basket.delete("Mango")
 puts basket.to_s
 basket.delete_at(0)

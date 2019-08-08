@@ -5,5 +5,5 @@ sleep 1
 puts "Второй километр"
 sleep 1
 puts "Третий километр"
-sleep 1
+sleep 2
 puts "Приехали"
