@@ -32,8 +32,11 @@ answers=[
   hello=[
     'Привет ' + name.to_s + '. Отвечаю на твой вопрос...',
     'Кто вопрошает, тот получит ответ:',
-    'Здравствуй, ' + name.to_s +'. Сегодня для тебя такой ответ:'
+    'Здравствуй, ' + name.to_s + '. Сегодня для тебя такой ответ:'
   ]
+  print 'Задай вопрос! '
+  question=gets.chomp
+  sleep 3
   puts hello.sample
   puts answers.sample
   puts "Спасибо!"

@@ -1,6 +1,6 @@
 # Уроки курса Ruby Rush
 
-##1. Установка Ruby на Debian 10
+## 1. Установка Ruby на Debian 10
 ### Установка Node js 12.x
 https://github.com/nodesource/distributions/blob/master/README.md#debinstall
 ### Using Debian, as root
@@ -8,7 +8,7 @@ curl -sL https://deb.nodesource.com/setup_12.x | bash -
 apt install -y nodejs
 apt install gcc g++ make
 
-##2. Установка RVM и Ruby
+## 2. Установка RVM и Ruby
 ### Добавляем ключ для проверки пакетов
 gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 ### Install RVM:
