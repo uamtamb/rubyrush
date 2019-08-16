@@ -4,6 +4,7 @@ if name==nil
     name='Таинственная персона'    
 elsif name=="-v"
     puts version
+    exit
 end
 puts "Добрый день #{name}, давайте пройдем тест!"
 cvest=[
