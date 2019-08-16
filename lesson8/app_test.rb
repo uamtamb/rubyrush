@@ -1,6 +1,9 @@
 name=ARGV[0]
+version = "Тест \"Ревнивы ли вы\". Версия 0.1.\n\n"
 if name==nil
     name='Таинственная персона'    
+elsif name=="-v"
+    puts version
 end
 puts "Добрый день #{name}, давайте пройдем тест!"
 cvest=[
