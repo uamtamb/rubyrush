@@ -1,4 +1,4 @@
-require "/media/_dev/lesson10/metod.rb"
+require_relative 'metod.rb'
 cls
 puts "Игра виселица, версия 1.0"
 slovo=get_slovo #загаданное слово

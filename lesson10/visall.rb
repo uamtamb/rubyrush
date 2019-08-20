@@ -1,3 +1,12 @@
+#Отчищаем экран
+def cls
+    system "clear" or system "cls"
+
+end
+cls
+
+puts "Игра виселица, версия 1.0"
+
 #метод ввода слова
 def get_slovo
     slovo=ARGV[0].downcase #вводим слово в качестве параметра
@@ -6,7 +15,10 @@ def get_slovo
     end
     return slovo.split("") #разбиваем слово на буквы
 end
-
+slovo=get_slovo #загаданное слово
+error=0 #счетчик ошибок
+good_bukva=[] #массив с верными буквами
+bad_bukva=[] #массив с буквами которых нет в слове
 #метод ввода буквы
 def get_user_input
     bukva=""
@@ -14,27 +26,6 @@ def get_user_input
         bukva=STDIN.gets.chomp.downcase
     end
     return bukva
-end
-
-#метод проверки результата
-def check_result(user_input, slovo, good_bukva, bad_bukva)
-    if (good_bukva.include?(user_input)||bad_bukva.include?(user_input))
-        return 0
-    end
-    if slovo.include? user_input #если в слове есть введенная буква, заносим ее в массив good_bukva
-        good_bukva << user_input
-        if slovo.uniq.size == good_bukva.size #если количество уникальных букв загажанного слова равно количеству букв в массиве good_bukva
-            #uniq - из исходного массива выбираем не повторяющиеся элементы
-            #[М О Л О К О].uniq > [М О Л К]
-            #size - возвращает размер, [М О Л К].size - 4
-            return 1
-        else
-            return 0
-        end
-    else
-        bad_bukva << user_input
-        return -1
-    end
 end
 
 def slivo_for_print(slovo, good_bukva)
@@ -64,7 +55,6 @@ def sklonenie (number, odin, dva, seven)
         return seven
     end
 end
-
 #метод вывод результата
 #1. выводит загаданное слово
 #2. информация об ошибках и уже названные буквы
@@ -85,8 +75,39 @@ def print_status(slovo, good_bukva, bad_bukva, error)
         end
     end
 end
-#Отчищаем экран
-def cls
-    system "clear" or system "cls"
 
+
+while error<7 do #цикл работает до 7 ошибок
+    print_status(slovo, good_bukva, bad_bukva, error) #метод (текущее состояние)
+    puts "Введите следующую букву"
+    user_input=get_user_input #вводим букву
+
+#метод проверки результата
+def check_result(user_input, slovo, good_bukva, bad_bukva)
+    if (good_bukva.include?(user_input)||bad_bukva.include?(user_input))
+        return 0
+    end
+    if slovo.include? user_input #если в слове есть введенная буква, заносим ее в массив good_bukva
+        good_bukva << user_input
+        if slovo.uniq.size == good_bukva.size #если количество уникальных букв загажанного слова равно количеству букв в массиве good_bukva
+            #uniq - из исходного массива выбираем не повторяющиеся элементы
+            #[М О Л О К О].uniq > [М О Л К]
+            #size - возвращает размер, [М О Л К].size - 4
+            return 1
+        else
+            return 0
+        end
+    else
+        bad_bukva << user_input
+        return -1
+    end
 end
+    result=check_result(user_input, slovo, good_bukva, bad_bukva) #метод проверки результата
+    #значение метода результад выводим в переменную
+    if (result==-1)
+        error+=1
+    elsif (result ==1)
+        break
+    end
+end
+print_status(slovo, good_bukva, bad_bukva, error)
