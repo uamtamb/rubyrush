@@ -40,8 +40,8 @@ while app!=0 do
         #Четное ли число?
         puts "Четное ли число?"
         print "Введите число: "
-        num=gets.to_f
-        if num%2==1
+        num=gets.to_i
+        if num.round%2==1
             puts "Число не четное #{num}"
         else
             puts "Число четное #{num}"
