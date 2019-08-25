@@ -1,12 +1,15 @@
 # Метод - меню выбора программ
-def Napps (apps)
+def Napp (apps)
     puts "Программа № #{apps}"
     while (apps==nil || apps==" ")
-            puts "Вы не ввели слово"
-            apps=STDIN.gets
-            puts "12"
-            return apps
+        puts "0. Выход из программы"
+        puts "1. Вывести большее из чисел"
+        puts "2. Среднее арифметическое двух чисел"
+        puts "3. Четное ли число?"
+        puts "4. Сегодня выходной?"
+        puts "Введите значение 1,2,3,4 или 0"
+        print "Введите номер программы: "
+        apps=STDIN.gets.to_i
     end
     return apps
-    puts "213"
 end
