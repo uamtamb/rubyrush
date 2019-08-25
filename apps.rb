@@ -8,8 +8,7 @@ puts "4. Сегодня выходной?"
 print "Введите номер программы: "
 app=gets.to_i
 while app!=0 do
-    Napps (app)
-    puts "Программа !!№ #{app}"
+    app=Napp(app)
     if app==1
         #Вывести большее из чисел
         puts "Вывести большее из чисел"
@@ -25,10 +24,7 @@ while app!=0 do
             puts 'Числа равны'
         end
         app=nil
-        puts "Программа +№ #{app}"
-        Napps (app)
-        puts "Программа !№ #{app}"
-
+        
     elsif app==2
         #Среднее арифметическое двух чисел
         puts "Среднее арифметическое двух чисел"
@@ -39,8 +35,6 @@ while app!=0 do
         average=(num_a+num_b)/2
         puts "Среднее арифметическое #{average.to_s}"
         app=nil
-        Napps (app)
-        puts "Программа !№ #{app}"
     
     elsif app==3
         #Четное ли число?
@@ -55,8 +49,6 @@ while app!=0 do
         app=nil
         print "Введите номер программы: "
         app=nil
-        Napps(app)
-        puts "Программа !№ #{app}"
 
     elsif app==4
         #Сегодня выходной?
@@ -70,9 +62,8 @@ while app!=0 do
         end
         print "Введите номер программы: "
         app=nil
-        Napps(app)
-        puts "Программа !№ #{app}"
     elsif app==0
         abort "Спасибо, до свидания!"
     end
 end
+puts "Спасибо, до свидания!"
