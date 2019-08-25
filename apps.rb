@@ -6,9 +6,9 @@ puts "2. Среднее арифметическое двух чисел"
 puts "3. Четное ли число?"
 puts "4. Сегодня выходной?"
 print "Введите номер программы: "
-app=gets.to_i
+app=gets
 while app!=0 do
-    app=Napp(app)
+    app=Napp(app).to_i
     if app==1
         #Вывести большее из чисел
         puts "Вывести большее из чисел"
@@ -40,14 +40,13 @@ while app!=0 do
         #Четное ли число?
         puts "Четное ли число?"
         print "Введите число: "
-        num=gets.to_i
+        num=gets.to_f
         if num.round%2==1
-            puts "Число не четное #{num}"
+        # if num%2==1
+            puts "#{num.round} - число не четное "
         else
-            puts "Число четное #{num}"
+            puts "#{num.round} -число четное"
         end
-        app=nil
-        print "Введите номер программы: "
         app=nil
 
     elsif app==4
@@ -62,8 +61,12 @@ while app!=0 do
         end
         print "Введите номер программы: "
         app=nil
+
     elsif app==0
         abort "Спасибо, до свидания!"
+
+    else
+        app=nil
     end
 end
 puts "Спасибо, до свидания!"
